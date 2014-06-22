@@ -1,5 +1,5 @@
 from flask import *
-# from sh import media
+from sh import media
 from os import urandom
 
 app = Flask(__name__)
