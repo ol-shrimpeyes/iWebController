@@ -15,7 +15,7 @@ def controls(control=None):
 	if request.method == 'GET':
 		if control:
 			media(control)
-			return url_for('controls')
+			return redirect(url_for('controls'))
 		else:
 			return render_template('controls.html')
 	elif request.method == 'POST':
