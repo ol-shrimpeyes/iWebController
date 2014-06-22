@@ -10,7 +10,7 @@ Setup
 requires
 
 * [Python 2.7](https://code.google.com/p/yangapp/downloads/detail?name=python_2.7.3-3_iphoneos-arm.deb)
-* [pip](https://bootstrap.pypa.io/get-pip.py) *(install as root)*
+* [pip](https://pip.pypa.io/en/latest/installing.html) *(install as root)*
 * [fake-libgcc](https://code.google.com/p/ipod-tools/downloads/detail?name=fake-libgcc_1.0_iphoneos-arm.deb)
 * GNU C compiler (in cydia)
 
