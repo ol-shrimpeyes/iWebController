@@ -26,7 +26,7 @@ def controls(control=None):
 		return redirect(url_for('controls', control=cont))
 
 def nowPlaying():
-	if media('isPlaying', _ok_code=media_codes) == '1':
+	if str(media('isPlaying', _ok_code=media_codes))[0] == '1':
 		artist = media('artist', _ok_code=media_codes)
 		track = media('title', _ok_code=media_codes)
 		playing = track + artist
