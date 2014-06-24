@@ -29,7 +29,7 @@ def nowPlaying():
 	if str(media('isPlaying', _ok_code=media_codes))[0] == '1':
 		artist = str(media('artist', _ok_code=media_codes))
 		track = str(media('title', _ok_code=media_codes))
-		playing = track + artist
+		playing = track +'-'+ artist
 	else:
 		playing = 'No music playing!'
 	return playing
