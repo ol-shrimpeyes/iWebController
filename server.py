@@ -9,8 +9,8 @@ app.secret_key = urandom(255)
 
 media_codes = [0,2,4,12,13]
 
-isPlaying
-isPaused
+isPlaying = ''
+isPaused = ''
 
 @app.route('/')
 def main():
