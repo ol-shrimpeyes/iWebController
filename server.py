@@ -6,8 +6,8 @@ from conf import *
 app = Flask(__name__)
 app.secret_key = urandom(255)
 
-media=media(_ok_code=media_codes)
 media_codes = [0,2,4,12,13]
+media=media(_ok_code=media_codes)
 
 @app.route('/')
 def main():
