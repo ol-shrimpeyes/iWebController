@@ -20,7 +20,7 @@ def controls(control=None):
 			media(control)
 			return redirect(url_for('controls'))
 		else:
-			return render_template('controls.html')
+			return render_template('controls.html', now_playing=nowPlaying())
 	elif request.method == 'POST':
 		cont = request.form['control']
 		return redirect(url_for('controls', control=cont))
@@ -32,5 +32,6 @@ def nowPlaying():
 		playing = track + artist
 	else:
 		playing = 'No music playing!'
+	return playing
 
 app.run(debug=DEBUG, host=HOST)
