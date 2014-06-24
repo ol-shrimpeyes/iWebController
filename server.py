@@ -19,20 +19,22 @@ def controls(control=None):
 	if request.method == 'GET':
 		if control:
 			media(control)
+			isPlaying = str(media('isPlaying', _ok_code=media_codes))[0]
+			isPaused = str(media('isPaused', _ok_code=media_codes))[0]
 			sleep(1)
 			return redirect(url_for('controls'))
 		else:
-			return render_template('controls.html', now_playing=nowPlaying())
+			return render_template('controls.html', now_playing=nowPlaying(isPaused, isPlaying))
 	elif request.method == 'POST':
 		cont = request.form['control']
 		return redirect(url_for('controls', control=cont))
 
-def nowPlaying():
-	if str(media('isPlaying', _ok_code=media_codes))[0] == '1':
+def nowPlaying(isPaused,isPlaying):
+	if isPlaying == '1':
 		artist = str(media('artist', _ok_code=media_codes))
 		track = str(media('title', _ok_code=media_codes))
 		playing = track +'- '+ artist
-	elif str(media('isPaused', _ok_code=media_codes))[0] == '1':
+	elif isPaused == '1':
 		artist = str(media('artist', _ok_code=media_codes))
 		track = str(media('title', _ok_code=media_codes))
 		playing = Markup(track +'- '+ artist + '<em><strong>[paused]<strong></em>')
