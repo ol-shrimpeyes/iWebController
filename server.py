@@ -1,9 +1,12 @@
-ffffvghfrom flask import *
+from flask import *
 from sh import media
 from os import urandom
+from conf import *
 
 app = Flask(__name__)
 app.secret_key = urandom(255)
+
+media = [0,12]
 
 @app.route('/')
 def main():
@@ -20,6 +23,14 @@ def controls(control=None):
 			return render_template('controls.html')
 	elif request.method == 'POST':
 		cont = request.form['control']
-		return redirect(url_for('controls', control=cont, now_playing=playing))
+		return redirect(url_for('controls', control=cont))
 
-app.run(debug=True)
+def nowPlaying():
+	if media('isPlaying', _ok_code=media_codes) == 1:
+			artist = media('artist', _ok_code=media_codes)
+			track = media('title', _ok_code=media_codes)
+			playing = track + artist
+		else:
+			playing = 'No music playing!'
+
+app.run(debug=DEBUG, host=HOST)
