@@ -1,4 +1,4 @@
-from flask import *
+ffffvghfrom flask import *
 from sh import media
 from os import urandom
 
@@ -19,12 +19,6 @@ def controls(control=None):
 		else:
 			return render_template('controls.html')
 	elif request.method == 'POST':
-		if media('isPlaying') == 1:
-			artist = media('artist')
-			track = media('title')
-			playing = track + artist
-		else:
-			playing = 'No music playing!'
 		cont = request.form['control']
 		return redirect(url_for('controls', control=cont, now_playing=playing))
 
