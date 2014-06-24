@@ -33,7 +33,7 @@ def nowPlaying():
 	elif str(media('isPaused', _ok_code=media_codes))[0] == '1':
 		artist = str(media('artist', _ok_code=media_codes))
 		track = str(media('title', _ok_code=media_codes))
-		playing = track +'- '+ artist
+		playing = track +'- '+ artist + Markup('<em><strong>[paused]<strong></em>')
 	else: 
 		playing = 'No music playing!'
 	return playing
