@@ -2,7 +2,7 @@ from flask import *
 from sh import media
 from os import urandom
 from conf import *
-from tim
+from time import sleep
 
 app = Flask(__name__)
 app.secret_key = urandom(255)
