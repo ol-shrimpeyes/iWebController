@@ -6,7 +6,8 @@ from conf import *
 app = Flask(__name__)
 app.secret_key = urandom(255)
 
-media_codes = [0,2,4,12]
+media=media(_ok_code=media_codes)
+media_codes = [0,2,4,12,13]
 
 @app.route('/')
 def main():
@@ -26,10 +27,11 @@ def controls(control=None):
 		return redirect(url_for('controls', control=cont))
 
 def nowPlaying():
-	if str(media('isPlaying', _ok_code=media_codes))[0] == '1':
-		artist = str(media('artist', _ok_code=media_codes))
-		track = str(media('title', _ok_code=media_codes))
+	if str(media('isPlaying')[0] == '1':
+		artist = str(media('artist')
+		track = str(media('title')
 		playing = track +'- '+ artist
+	if str(media('isPaused')
 	else: 
 		playing = 'No music playing!'
 	return playing
