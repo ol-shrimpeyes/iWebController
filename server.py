@@ -27,11 +27,14 @@ def controls(control=None):
 		return redirect(url_for('controls', control=cont))
 
 def nowPlaying():
-	if str(media('isPlaying')[0] == '1':
-		artist = str(media('artist')
-		track = str(media('title')
+	if str(media('isPlaying'))[0] == '1':
+		artist = str(media('artist'))
+		track = str(media('title'))
 		playing = track +'- '+ artist
-	if str(media('isPaused')
+	elif str(media('isPaused')) == 1:
+		artist = str(media('artist'))
+		track = str(media('title'))
+		playing = track +'- '+ artist
 	else: 
 		playing = 'No music playing!'
 	return playing
