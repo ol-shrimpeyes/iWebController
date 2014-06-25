@@ -32,6 +32,7 @@ def nowPlaying():
 	isPaused = str(media('isPaused', _ok_code=media_codes))[0]
 	artist = str(media('artist', _ok_code=media_codes))
 	track = str(media('title', _ok_code=media_codes))
+	stopped = False
 	if track == '(null)' and artist == '(null)':
 		stopped = True
 	if isPlaying == '1':
