@@ -28,13 +28,15 @@ def controls(control=None):
 		return redirect(url_for('controls', control=cont))
 
 def nowPlaying():
-	if str(media('isPlaying', _ok_code=media_codes))[0] == '1':
-		artist = str(media('artist', _ok_code=media_codes))
-		track = str(media('title', _ok_code=media_codes))
+	isPlaying = str(media('isPlaying', _ok_code=media_codes))[0]
+	isPaused = str(media('isPaused', _ok_code=media_codes))[0]
+	artist = str(media('artist', _ok_code=media_codes))
+	track = str(media('title', _ok_code=media_codes))
+	if track == '(null)' and artist == '(null)':
+		stopped = True
+	if isPlaying == '1':
 		playing = track +'- '+ artist
-	elif str(media('isPaused', _ok_code=media_codes))[0] == '1':
-		artist = str(media('artist', _ok_code=media_codes))
-		track = str(media('title', _ok_code=media_codes))
+	elif isPaused == '1' and not stopped:
 		playing = Markup(track +'- '+ artist + '<em><strong>[paused]<strong></em>')
 	else: 
 		playing = 'No music playing!'

@@ -3,10 +3,11 @@ iWebController
 
 A python/flask frontend for SSHMediaControls on *jailbroken* iOS devices!
 
-This software is in its very early days. This is very prelimenary. Everything here was done in about 15 minutes.
+This software is in its very early days. This is very prelimenary. Everything here was done in about 1 hour.
 
 Setup
 -----
+
 ### requires:
 
 * [Python 2.7](https://code.google.com/p/yangapp/downloads/detail?name=python_2.7.3-3_iphoneos-arm.deb)
@@ -20,6 +21,7 @@ Setup
 * OpenSSH
 * SSHMediaControls
 
+
 #### required modules:
 * flask
 * sh
@@ -28,6 +30,8 @@ Setup
 
 #### configuring:
 
+get the project: `git clone git://github.com/ol-shrimpeyes/iwebcontroller`
+
 `cp ./default/conf.py ./conf.py`
 
 Change the `HOST` variable in conf.py to your internal ip. Only set `DEBUG` to `True` if you know what this is.
@@ -35,6 +39,5 @@ Change the `HOST` variable in conf.py to your internal ip. Only set `DEBUG` to `
 running:
 -------
 
-	git clone git://github.com/ol-shrimpeyes/iwebcontroller
 	cd ./iwebcontroller
 	python server.py
