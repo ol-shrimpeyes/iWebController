@@ -32,7 +32,8 @@ Setup
 
 Change the `HOST` variable in conf.py to your internal ip. Only set `DEBUG` to `True` if you know what this is.
 
-### running:
+running:
+-------
 
 	git clone git://github.com/ol-shrimpeyes/iwebcontroller
 	cd ./iwebcontroller
