@@ -28,7 +28,7 @@ def controls(control=None):
 		return redirect(url_for('controls', control=cont))
 
 def getVol():
-	vol = media('getVol')
+	vol = media('getVol', _ok_code=media_codes)
 	vol = str(int(float(vol)*100)) + '%'
 	return vol
 
