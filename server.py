@@ -33,7 +33,7 @@ def nowPlaying():
 	artist = str(media('artist', _ok_code=media_codes))
 	track = str(media('title', _ok_code=media_codes))
 	stopped = False
-	if track == '(null)' and artist == '(null)':
+	if '(null)' in track and '(null)' in artist:
 		stopped = True
 	if isPlaying == '1':
 		playing = track +'- '+ artist
