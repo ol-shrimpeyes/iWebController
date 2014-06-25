@@ -1,7 +1,19 @@
-<h1>MEDIA CONTROLS</h1>
-<h3>{{now_playing}}</h3>
-<form method='POST'>
-	<input type='submit' name='control' value='play'>
-	<input type='submit' name='control' value='pause'>
-	<input type='submit' name='control' value='stop'>
-</form>
+<<!DOCTYPE html>
+<html>
+<head>
+	<title>{{now_playing}}</title>
+</head>
+<body>
+	<h1>MEDIA CONTROLS</h1>
+	<h3>{{now_playing}}</h3>
+	<form method='POST'>
+		<input type='submit' name='control' value='play'>
+		<input type='submit' name='control' value='pause'>
+		<input type='submit' name='control' value='stop'>
+		<br>
+		{{volume}}
+		<input type="submit" name="control" value='vol+'>
+		<input type="submit" name="control" value='vol-'>
+	</form>
+</body>
+</html>
