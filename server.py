@@ -1,4 +1,4 @@
-tfrom flask import *
+from flask import *
 from sh import media
 from os import urandom
 from conf import *
